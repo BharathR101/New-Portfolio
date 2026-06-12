@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharath R</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: white;
+      color: black;
+      line-height: 1.7;
+    }
+
+    a {
+      color: rgb(55, 141, 221);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+
+    nav {
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .brand {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #111;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    nav ul a:hover {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+
+    .hero {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      padding-top: 5rem;
+    }
+
+    .hero img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e5e7eb;
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero .role {
+      font-size: 0.9rem;
+      color: #2563eb;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      color: #555;
+      max-width: 480px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: #2563eb;
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: #1d4ed8;
+      text-decoration: none;
+    }
+
+    /* HEADINGS */
+    h2 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ABOUT */
+    .about p {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 0.9rem;
+    }
+
+    /* SKILLS */
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-list span {
+      background: #f3f4f6;
+      color: #333;
+      font-size: 0.82rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .media-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .media-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .media-box .label {
+      padding: 0.6rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #555;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f9fafb;
+    }
+
+    .media-box video,
+    .media-box audio {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+    }
+
+    /* EXPERIENCE */
+    .entry {
+      margin-bottom: 2rem;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.1rem;
+    }
+
+    .entry-meta {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+
+    .entry p {
+      font-size: 0.88rem;
+      color: #555;
+    }
+
+
+    .project {
+      margin-bottom: 2rem;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.1rem;
+    }
+
+    .project-type {
+      font-size: 0.78rem;
+      color: #2563eb;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .tags span {
+      font-size: 0.72rem;
+      color: #888;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 0.15rem 0.6rem;
+    }
+
+
+    .cta-section {
+      text-align: center;
+      padding: 5rem 1.5rem;
+    }
+
+    .cta-section h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-section p {
+      font-size: 0.92rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section a {
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .cta-section a:hover {
+      background: #1d4ed8;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: #aaa;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .media-row {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <span class="brand">Bharath R</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section>
+    <div class="hero">
+      <img src="photo.jpg" alt="Bharath R">
+      <div>
+        <h1>Bharath R</h1>
+        <p class="role">Electronics &amp; Instrumentation Engineering Student</p>
+        <p>I work with sensors, embedded systems, and PCB testing. I also build web pages to document and present
+          technical work clearly.</p>
+        <a href="#contact" class="hero-cta">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <p>Currently pursuing a B.Tech in Electronics and Instrumentation Engineering at Federal Institute of Science and
+        Technology, admitted August 2025.</p>
+      <p>I have hands-on experience calibrating sensors, testing PCBs, and building signal conditioning setups in the
+        lab. Outside of hardware, I enjoy building clean web pages to present technical projects.</p>
+      <p>I'm looking for internship or entry-level opportunities in instrumentation, embedded systems, or electronics
+        engineering.</p>
+    </div>
+  </section>
+
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-list">
+      <span>Sensors &amp; Transducers</span>
+      <span>Signal Conditioning</span>
+      <span>PLC Basics</span>
+      <span>Arduino</span>
+      <span>Microcontrollers</span>
+      <span>PCB Testing</span>
+      <span>Electronics Troubleshooting</span>
+      <span>HTML &amp; CSS</span>
+      <span>JavaScript</span>
+    </div>
+
+    <div class="media-row">
+      <div class="media-box">
+        <div class="label">Also I Have Skill On This!!!</div>
+        <video controls preload="metadata">
+          <source src="video9.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="media-box">
+        <div class="label">And This Is My Song!!!</div>
+        <audio controls>
+          <source src="Just a Beginning.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-title">Academic Laboratory Experience</div>
+      <div class="entry-meta">Federal Institute of Science and Technology &mdash; Aug 2025 to present</div>
+      <p>Calibrated temperature and pressure sensors, set up oscilloscope signal capture, and validated instrumentation
+        systems for electrical and control experiments.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Student Laboratory Assistant</div>
+      <div class="entry-meta">College Engineering Labs</div>
+      <p>PCB testing and electronics troubleshooting. Designed lab setups using sensors, microcontrollers, and signal
+        conditioning circuits to support student project demonstrations.</p>
+    </div>
+  </section>
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <div class="project-title">Sensor Data Logger</div>
+      <div class="project-type">Academic Project</div>
+      <p>Built a prototype using Arduino and signal conditioning circuits to log sensor readings. Integrated temperature
+        and pressure sensors, ADC modules, and serial communication for accurate data collection.</p>
+      <p>Improved measurement accuracy and made lab experiment reporting clearer.</p>
+      <div class="tags">
+        <span>Arduino</span><span>ADC</span><span>Serial Comm</span><span>Sensor Calibration</span>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Instrument Panel Website</div>
+      <div class="project-type">Personal Project</div>
+      <p>A responsive HTML/CSS website to present instrumentation project summaries, equipment details, and technical
+        documentation.</p>
+      <div class="tags">
+        <span>HTML</span><span>CSS</span><span>Responsive Design</span>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-title">B.Tech — Electronics and Instrumentation Engineering</div>
+      <div class="entry-meta">Federal Institute of Science and Technology &mdash; Aug 2025 to present</div>
+      <p>Coursework in instrumentation, sensors, measurement systems, electronics circuits, and control systems.</p>
+    </div>
+  </section>
+
+
+  <section id="contact" class="cta-section">
+    <h3>Open to opportunities</h3>
+    <p>Looking for internships or entry-level roles in instrumentation or electronics. Let's talk.</p>
+    <a href="mailto:bharath@example.com">Email me</a>
+  </section>
+
+  <footer>Bharath R &mdash; Electronics &amp; Instrumentation Engineering &mdash; 2025</footer>
+
+</body>
+
+</html>
